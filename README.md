@@ -6,7 +6,7 @@ Folder Arduino
 ----
   - index_sd.html
   - WebServerSDCard.ino
-
+  - scheme.png
 Usage:
 ----
   - format sdcard to fat16

@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="app_name">AutomacaoResidencial</string>
+    <string name="ip">192.168.10.20</string>
+    <string name="menu_settings">Settings</string>
+    
+    <!-- Botoes Label -->
+    <string name="ativar">Ativar</string>
+    <string name="desativar">Desativar</string>
+    
+    <string name="pin02">Jardim</string>
+    <string name="pin05">WC</string>
+    <string name="pin06">Cozinha</string>
+    <string name="pin08">Sala de TV</string>
+</resources>

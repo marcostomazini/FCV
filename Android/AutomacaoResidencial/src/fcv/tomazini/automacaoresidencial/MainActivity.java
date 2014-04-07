@@ -5,6 +5,8 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import fcv.tomazini.automacaoresidencial.util.ApiController;
 
@@ -21,6 +23,8 @@ public class MainActivity extends Activity {
 	private Button btn06on, btn06off;
 
 	private Button btn08on, btn08off;
+
+	private AutoCompleteTextView server;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -41,16 +45,30 @@ public class MainActivity extends Activity {
 		btn08on = (Button) findViewById(R.id.pin08on);
 		btn08off = (Button) findViewById(R.id.pin08off);
 
+		server = (AutoCompleteTextView) findViewById(R.id.autoCompleteServer);
+
+		initAutoComplete();
 		createListeners();
 	}
 
-	private void createListeners() {
+	private void initAutoComplete() {
+		// Get the string array
+		String[] urlsServico = getResources().getStringArray(
+				R.array.server_array);
+		// Create the adapter and set it to the AutoCompleteTextView
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, urlsServico);
+		server.setAdapter(adapter);
+	}
 
+	private void createListeners() {
+		final ApiController api = new ApiController(progressDialog, server
+				.getText().toString());
+		
 		// PIN2
 		btn02on.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				ApiController api = new ApiController(progressDialog);
 				api.sincronizar("pin2on");
 			}
 		});
@@ -58,7 +76,6 @@ public class MainActivity extends Activity {
 		btn02off.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				ApiController api = new ApiController(progressDialog);
 				api.sincronizar("pin2off");
 			}
 		});
@@ -67,7 +84,6 @@ public class MainActivity extends Activity {
 		btn05on.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				ApiController api = new ApiController(progressDialog);
 				api.sincronizar("pin5on");
 			}
 		});
@@ -75,7 +91,6 @@ public class MainActivity extends Activity {
 		btn05off.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				ApiController api = new ApiController(progressDialog);
 				api.sincronizar("pin5off");
 			}
 		});
@@ -84,7 +99,6 @@ public class MainActivity extends Activity {
 		btn06on.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				ApiController api = new ApiController(progressDialog);
 				api.sincronizar("pin6on");
 			}
 		});
@@ -92,7 +106,6 @@ public class MainActivity extends Activity {
 		btn06off.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				ApiController api = new ApiController(progressDialog);
 				api.sincronizar("pin6off");
 			}
 		});
@@ -101,7 +114,6 @@ public class MainActivity extends Activity {
 		btn08on.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				ApiController api = new ApiController(progressDialog);
 				api.sincronizar("pin8on");
 			}
 		});
@@ -109,7 +121,6 @@ public class MainActivity extends Activity {
 		btn08off.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				ApiController api = new ApiController(progressDialog);
 				api.sincronizar("pin8off");
 			}
 		});

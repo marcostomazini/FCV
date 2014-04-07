@@ -2,7 +2,6 @@ package fcv.tomazini.automacaoresidencial.util;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import fcv.tomazini.automacaoresidencial.R;
 
 public class ApiController {
 
@@ -10,10 +9,9 @@ public class ApiController {
 	private String location;
 	private GetApi api;
 
-	public ApiController(ProgressDialog progressDialog) {
+	public ApiController(ProgressDialog progressDialog, String location) {
 		this.progressDialog = progressDialog;
-		location = progressDialog.getContext().getResources()
-				.getString(R.string.ip);
+		this.location = location;
 	}
 
 	public void sincronizar(String action) {

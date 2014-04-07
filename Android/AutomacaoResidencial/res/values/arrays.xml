@@ -1,0 +1,14 @@
+<resources>
+
+    <string-array name="server_array">
+        <item>192.168.10.201</item>
+        <item>192.168.10.</item>
+        <item>192.168.1.201</item>
+        <item>192.168.1.</item>
+        <item>192.168.0.201</item>
+        <item>192.168.0</item>
+        <item>10.0.0.201</item>
+        <item>10.0.0.</item>
+    </string-array>
+
+</resources>

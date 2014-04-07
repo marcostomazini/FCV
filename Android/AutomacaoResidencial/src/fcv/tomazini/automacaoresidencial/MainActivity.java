@@ -62,21 +62,20 @@ public class MainActivity extends Activity {
 	}
 
 	private void createListeners() {
-		final ApiController api = new ApiController(progressDialog, server
-				.getText().toString());
-		
+		final ApiController api = new ApiController(progressDialog);
+
 		// PIN2
 		btn02on.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				api.sincronizar("pin2on");
+				api.sincronizar("pin2on", server.getText().toString());
 			}
 		});
 
 		btn02off.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				api.sincronizar("pin2off");
+				api.sincronizar("pin2off", server.getText().toString());
 			}
 		});
 
@@ -84,14 +83,14 @@ public class MainActivity extends Activity {
 		btn05on.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				api.sincronizar("pin5on");
+				api.sincronizar("pin5on", server.getText().toString());
 			}
 		});
 
 		btn05off.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				api.sincronizar("pin5off");
+				api.sincronizar("pin5off", server.getText().toString());
 			}
 		});
 
@@ -99,14 +98,14 @@ public class MainActivity extends Activity {
 		btn06on.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				api.sincronizar("pin6on");
+				api.sincronizar("pin6on", server.getText().toString());
 			}
 		});
 
 		btn06off.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				api.sincronizar("pin6off");
+				api.sincronizar("pin6off", server.getText().toString());
 			}
 		});
 
@@ -114,14 +113,14 @@ public class MainActivity extends Activity {
 		btn08on.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				api.sincronizar("pin8on");
+				api.sincronizar("pin8on", server.getText().toString());
 			}
 		});
 
 		btn08off.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				api.sincronizar("pin8off");
+				api.sincronizar("pin8off", server.getText().toString());
 			}
 		});
 	}

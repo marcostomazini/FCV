@@ -6,15 +6,13 @@ import android.os.AsyncTask;
 public class ApiController {
 
 	private ProgressDialog progressDialog;
-	private String location;
 	private GetApi api;
 
-	public ApiController(ProgressDialog progressDialog, String location) {
+	public ApiController(ProgressDialog progressDialog) {
 		this.progressDialog = progressDialog;
-		this.location = location;
 	}
 
-	public void sincronizar(String action) {
+	public void sincronizar(String action, String location) {
 		api = new GetApi(location);
 		new SincronizarDados().execute(action);
 	}
